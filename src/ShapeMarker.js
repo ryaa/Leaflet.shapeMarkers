@@ -51,5 +51,21 @@ export var ShapeMarker = L.Path.extend({
 
   getSize: function () {
     return this._size;
+  },
+
+  // NOTE: Needed by the leaflet `Canvas` renderer for interactivity
+  // For more details please see https://github.com/boss-solutions/boss_maps/issues/200#issuecomment-1743215427
+  // and https://github.com/Esri/Leaflet.shapeMarkers/issues/26
+	_containsPoint: function (p) {
+    if (p) {
+		   return p.distanceTo(this._point) <= this.getSize() + this._clickTolerance();
+    }
+    return false;
+	},
+
+  _updateBounds: function () {
+    // NOTE: there is no bounds to update so this is a dummy method to avoid errors
+    // For more details please see here https://github.com/Esri/esri-leaflet/issues/1368
   }
+
 });
