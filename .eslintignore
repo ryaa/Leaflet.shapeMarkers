@@ -1,0 +1,2 @@
+# Ignore for linting for avoid eslint errors in VSCode
+/**/*.js

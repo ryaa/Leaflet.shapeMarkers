@@ -18,7 +18,7 @@ npm-debug.log
 .grunt/
 
 # compiled code
-dist/*
+# dist/*
 
 # Debugging Files
 debug/*
