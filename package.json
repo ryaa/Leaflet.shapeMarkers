@@ -20,7 +20,6 @@
     "rollup-plugin-json": "^2.0.0",
     "rollup-plugin-node-resolve": "^1.4.0",
     "rollup-plugin-uglify": "^0.3.1",
-    "semistandard": "^7.0.5",
     "uglify-js": "^2.4.23",
     "watch": "^0.17.1"
   },
@@ -48,7 +47,6 @@
     "prebuild": "mkdirp dist",
     "build": "rollup -c scripts/debug.js && rollup -c scripts/production.js",
     "release": "./scripts/release.sh",
-    "lint": "semistandard src/*.js",
     "start": "watch 'npm run build' src & http-server -p 5000 -c-1 -o"
   }
 }
